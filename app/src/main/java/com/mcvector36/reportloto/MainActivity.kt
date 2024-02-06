@@ -1,6 +1,5 @@
 package com.mcvector36.reportloto
 
-import android.content.ContentResolver
 import android.os.Bundle
 import android.view.ViewGroup
 import android.webkit.WebSettings
@@ -17,8 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import android.content.Context
 import android.widget.ImageView
-
-import android.os.Handler
+import androidx.core.content.res.ResourcesCompat
 
 
 class MainActivity : ComponentActivity() {
@@ -33,21 +31,13 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WebViewWithLoader(context: Context) {
     val webView = remember { WebView(context) }
-    val loadingImageUrl = "file:///android_res/drawable/animatie.gif" // Calea către imaginea de încărcare din resursele proiectului
-
-    val handler = Handler()
-    val delayRunnable = Runnable {
-        // Ascundem imaginea de încărcare după o întârziere
-        webView.visibility = android.view.View.VISIBLE
-    }
+    val loadingImageResourceId = R.drawable.animatie // Id-ul resursei pentru imaginea de încărcare
 
     val webViewClient = object : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
             super.onPageStarted(view, url, favicon)
             // Când începe încărcarea paginii, afișăm imaginea de încărcare
             webView.visibility = android.view.View.INVISIBLE
-            // Programăm o întârziere pentru ascunderea imaginii de încărcare după cel puțin 1000 ms
-            handler.postDelayed(delayRunnable, 1000)
         }
 
         override fun onPageFinished(view: WebView?, url: String?) {
@@ -78,7 +68,7 @@ fun WebViewWithLoader(context: Context) {
         AndroidView(
             factory = { context ->
                 ImageView(context).apply {
-                    setImageURI(android.net.Uri.parse(loadingImageUrl))
+                    setImageDrawable(ResourcesCompat.getDrawable(context.resources, loadingImageResourceId, null))
                     layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 }
             },
