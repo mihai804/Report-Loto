@@ -18,16 +18,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ReportLotoTheme {
-                WebViewComponent()
+                WebViewContent()
             }
         }
     }
 }
 
 @Composable
-fun WebViewComponent() {
-
-
+fun WebViewContent() {
     AndroidView(
         modifier = Modifier.fillMaxSize(),
         factory = { context ->
