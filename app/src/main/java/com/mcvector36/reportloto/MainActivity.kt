@@ -16,7 +16,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import android.content.Context
 import android.widget.ImageView
-import androidx.core.content.res.ResourcesCompat
+
+
+
+
+import android.os.Handler
+
+import androidx.compose.runtime.mutableStateOf
+
+import java.util.*
 
 
 class MainActivity : ComponentActivity() {
@@ -30,53 +38,54 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun WebViewWithLoader(context: Context) {
-    val webView = remember { WebView(context) }
-    val loadingImageResourceId = R.drawable.animatie // Id-ul resursei pentru imaginea de încărcare
+    val loadingImageResourceId = R.drawable.animatie // ID-ul resursei pentru animația de încărcare
+    val webViewLoaded = remember { mutableStateOf(false) }
 
-    val webViewClient = object : WebViewClient() {
-        override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
-            super.onPageStarted(view, url, favicon)
-            // Când începe încărcarea paginii, afișăm imaginea de încărcare
-            webView.visibility = android.view.View.INVISIBLE
-        }
+    // Handler pentru a întârzia încărcarea paginii după afișarea animației
+    val handler = Handler()
 
-        override fun onPageFinished(view: WebView?, url: String?) {
-            super.onPageFinished(view, url)
-            // După ce pagina s-a încărcat complet, facem WebView vizibilă și eliminăm imaginea de încărcare
-            webView.visibility = android.view.View.VISIBLE
+    // Simulăm încărcarea paginii
+    val timer = Timer()
+    timer.schedule(object : TimerTask() {
+        override fun run() {
+            webViewLoaded.value = true // Marchează că pagina web s-a încărcat
         }
-    }
+    }, 5000) // După 5 secunde, simulăm încărcarea completă a paginii
 
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
-        AndroidView(
-            modifier = Modifier.fillMaxSize(),
-            factory = { webView },
-            update = { view ->
-                with(view.settings) {
-                    javaScriptEnabled = true
-                    cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
-                }
-                view.webViewClient = webViewClient
-                view.loadUrl("https://www.loto.ro/?p=3872") // Înlocuiți cu URL-ul paginii web dorite
-            }
-        )
-
-        // Imaginea de încărcare
-        AndroidView(
-            factory = { context ->
-                ImageView(context).apply {
-                    setImageDrawable(ResourcesCompat.getDrawable(context.resources, loadingImageResourceId, null))
-                    layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                }
-            },
-            modifier = Modifier.align(Alignment.Center),
-            update = { imageView ->
-                // Afișăm sau ascundem imaginea în funcție de vizibilitatea WebView-ului
-                imageView.visibility = if (webView.visibility == android.view.View.VISIBLE) android.view.View.GONE else android.view.View.VISIBLE
-            }
-        )
+        // Afișăm WebView-ul sau imaginea de încărcare în funcție de starea încărcării paginii
+        if (webViewLoaded.value) {
+            AndroidView(
+                factory = { ctx ->
+                    WebView(ctx).apply {
+                        layoutParams = android.view.ViewGroup.LayoutParams(
+                            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                            android.view.ViewGroup.LayoutParams.MATCH_PARENT
+                        )
+                        settings.javaScriptEnabled = true
+                        webViewClient = WebViewClient()
+                        loadUrl("https://www.loto.ro/?p=3872") // Înlocuiți cu URL-ul paginii web dorite
+                    }
+                },
+                modifier = Modifier.fillMaxSize()
+            )
+        } else {
+            AndroidView(
+                factory = { ctx ->
+                    WebView(ctx).apply {
+                        layoutParams = android.view.ViewGroup.LayoutParams(
+                            android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+                            android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+                        )
+                        settings.javaScriptEnabled = true
+                        loadUrl("file:///android_res/drawable/animatie.gif") // Încărcăm animația de încărcare
+                    }
+                },
+                modifier = Modifier.fillMaxSize()
+            )
+        }
     }
 }
