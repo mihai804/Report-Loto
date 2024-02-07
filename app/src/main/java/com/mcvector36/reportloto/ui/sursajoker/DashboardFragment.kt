@@ -1,5 +1,50 @@
-package com.mcvector36.reportloto
+package com.mcvector36.reportloto.ui.sursajoker
 
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.mcvector36.reportloto.databinding.FragmentDashboardBinding
+
+class DashboardFragment : Fragment() {
+
+    private var _binding: FragmentDashboardBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        val dashboardViewModel =
+            ViewModelProvider(this).get(DashboardViewModel::class.java)
+
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        val textView: TextView = binding.textDashboard
+        dashboardViewModel.text.observe(viewLifecycleOwner) {
+            textView.text = it
+        }
+        return root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
+
+
+/*
 import android.os.Bundle
 import android.view.ViewGroup
 import android.webkit.WebSettings
@@ -13,14 +58,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
-import com.mcvector36.reportloto.ui.theme.ReportLotoTheme
+import com.mcvector36.reportloto.ui.ui.ReportLotoTheme
 
 class ReportJoker : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ReportLotoTheme {
-                // A surface container using the 'background' color from the theme
+                // A surface container using the 'background' color from the ui
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -64,4 +109,4 @@ fun WebJoker() {
     )
 }
 
-
+*/
