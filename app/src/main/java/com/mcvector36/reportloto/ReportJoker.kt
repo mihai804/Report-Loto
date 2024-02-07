@@ -10,14 +10,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import com.mcvector36.reportloto.ui.theme.ReportLotoTheme
 
-class Report6din49 : ComponentActivity() {
+class ReportJoker : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,7 +25,7 @@ class Report6din49 : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Web6din49()
+                    WebJoker()
                 }
             }
         }
@@ -35,7 +33,7 @@ class Report6din49 : ComponentActivity() {
 }
 
 @Composable
-fun Web6din49() {
+fun WebJoker() {
 
 
     AndroidView(
@@ -58,11 +56,13 @@ fun Web6din49() {
 
 
 
-                loadUrl("https://www.loto.ro/?p=3872") // Înlocuiește cu URL-ul paginii web dorite
+                loadUrl("https://www.loto.ro/?p=3899") // Înlocuiește cu URL-ul paginii web dorite
             }
         },
         update = { view ->
-            view.loadUrl("https://www.loto.ro/?p=3872") // Înlocuiește cu URL-ul paginii web dorite
+            view.loadUrl("https://www.loto.ro/?p=3899") // Înlocuiește cu URL-ul paginii web dorite
         }
     )
 }
+
+
