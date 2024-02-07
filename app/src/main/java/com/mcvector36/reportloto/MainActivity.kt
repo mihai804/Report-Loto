@@ -27,13 +27,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             ReportLotoTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    color = MaterialTheme.colorScheme.background
-                ) {
+
                     Start6din49()
 //                    StartJoker()
 
-                }
+
             }
         }
 
