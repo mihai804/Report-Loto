@@ -1,5 +1,6 @@
 package com.mcvector36.reportloto.ui.pachet6din49
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,8 +20,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is pachet6din49 Fragment"
+    private val _uri = MutableLiveData<Uri>().apply {
+        value = Uri.parse("https://www.loto.ro/?p=3872")
     }
-    val text: LiveData<String> = _text
+    val uri: LiveData<Uri> = _uri
 }

@@ -1,14 +1,16 @@
-package com.mcvector36.reportloto.ui.sursajoker
+package com.mcvector36.reportloto.ui.pachetjoker
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mcvector36.reportloto.databinding.FragmentDashboardBinding
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 
 class DashboardFragment : Fragment() {
 
@@ -29,9 +31,13 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val webView: WebView = binding.webViewJoker
+        webView.settings.javaScriptEnabled
+        webView.settings.domStorageEnabled
+        webView.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+        webView.webViewClient = WebViewClient()
+        dashboardViewModel.uri.observe(viewLifecycleOwner) {
+            webView.loadUrl(it.toString())
         }
         return root
     }
