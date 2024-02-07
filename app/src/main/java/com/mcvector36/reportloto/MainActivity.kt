@@ -28,22 +28,23 @@ class MainActivity : ComponentActivity() {
             ReportLotoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen()
+                    Start6din49()
+//                    StartJoker()
+
                 }
             }
         }
 
     }
 }
-@Preview(showBackground = true)
+
 @Composable
-fun MainScreen() {
+fun Start6din49() {
     val buton6din49 = LocalContext.current
 
-    Button(onClick = {
+    val buton1 = Button(onClick = {
             val intent6din49 = Intent(buton6din49, Report6din49::class.java)
             buton6din49.startActivity(intent6din49)
         }) {
@@ -54,15 +55,19 @@ fun MainScreen() {
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp)
         }
+}
 
+@Composable
+fun StartJoker() {
     val butonjoker = LocalContext.current
 
-    Button(onClick = {
+    val buton2 = Button( onClick = {
         val intentjoker = Intent(butonjoker, ReportJoker::class.java)
         butonjoker.startActivity(intentjoker)
-    } ) {
+    }) {
 
-        Text(text="Joker",
+        Text(
+            text = "Joker",
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Normal,
             fontSize = 24.sp,

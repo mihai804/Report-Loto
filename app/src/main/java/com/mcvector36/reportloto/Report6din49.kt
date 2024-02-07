@@ -39,7 +39,6 @@ fun Web6din49() {
 
 
     AndroidView(
-        modifier = Modifier.fillMaxSize(),
         factory = { context ->
             WebView(context).apply {
                 layoutParams = ViewGroup.LayoutParams(

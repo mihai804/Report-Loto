@@ -37,7 +37,6 @@ fun WebJoker() {
 
 
     AndroidView(
-        modifier = Modifier.fillMaxSize(),
         factory = { context ->
             WebView(context).apply {
                 layoutParams = ViewGroup.LayoutParams(
