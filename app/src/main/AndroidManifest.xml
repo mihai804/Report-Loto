@@ -13,6 +13,11 @@
         android:theme="@style/Theme.ReportLoto"
         tools:targetApi="31">
         <activity
+            android:name=".Report6din49"
+            android:exported="false"
+            android:label="@string/title_activity_report6din49"
+            android:theme="@style/Theme.ReportLoto" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -23,11 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
-<!--        <meta-data
-            android:name="com.google.android.gms.ads.reportloto"
-            android:value="ca-app-pub-1645817822233777~7662753006"/>
--->
     </application>
 
 </manifest>
