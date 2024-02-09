@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.pachet6din49.HomeFragment">
+    tools:context=".ui.pachet6din49.View6din49">
 
     <WebView
         android:id="@+id/webView6din49"

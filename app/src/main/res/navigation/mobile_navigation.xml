@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.mcvector36.reportloto.ui.pachet6din49.HomeFragment"
+        android:name="com.mcvector36.reportloto.ui.pachet6din49.View6din49"
         android:label="@string/title_home"
         tools:layout="@layout/activity_main" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.mcvector36.reportloto.ui.pachetjoker.DashboardFragment"
+        android:name="com.mcvector36.reportloto.ui.pachetjoker.ViewJoker"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_home" />
 
