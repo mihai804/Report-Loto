@@ -32,10 +32,11 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
 
         val webView: WebView = binding.webViewJoker
-        webView.settings.javaScriptEnabled
-        webView.settings.domStorageEnabled
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
         webView.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
         webView.webViewClient = WebViewClient()
+
         dashboardViewModel.uri.observe(viewLifecycleOwner) {
             webView.loadUrl(it.toString())
         }

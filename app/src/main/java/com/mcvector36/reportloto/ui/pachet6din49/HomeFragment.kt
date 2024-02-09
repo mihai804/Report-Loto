@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.mcvector36.reportloto.databinding.FragmentHomeBinding
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.lifecycle.viewmodel.viewModelFactory
 
 class HomeFragment : Fragment() {
 
@@ -34,10 +32,11 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         val webView: WebView = binding.webView6din49
-        webView.settings.javaScriptEnabled
-        webView.settings.domStorageEnabled
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
         webView.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
         webView.webViewClient = WebViewClient()
+
         homeViewModel.uri.observe(viewLifecycleOwner) {
             webView.loadUrl(it.toString())
         }
