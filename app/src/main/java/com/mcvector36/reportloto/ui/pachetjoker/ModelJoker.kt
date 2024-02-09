@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 class ModelJoker : ViewModel() {
 
     private val _uri = MutableLiveData<Uri>().apply {
-        value = Uri.parse("https://www.loto.ro/?p=3899")
+      value = Uri.parse("https://www.loto.ro/?p=3899")
     }
     val uri: LiveData<Uri> = _uri
 }

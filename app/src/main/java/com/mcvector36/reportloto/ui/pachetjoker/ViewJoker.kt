@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.mcvector36.reportloto.databinding.FragmentDashboardBinding
+import com.mcvector36.reportloto.databinding.GraficaJokerBinding
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
 class ViewJoker : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: GraficaJokerBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,7 +28,7 @@ class ViewJoker : Fragment() {
         val modelJoker =
             ViewModelProvider(this).get(ModelJoker::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = GraficaJokerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val webView: WebView = binding.webViewJoker

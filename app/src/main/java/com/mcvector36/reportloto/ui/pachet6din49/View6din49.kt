@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.mcvector36.reportloto.databinding.FragmentHomeBinding
+import com.mcvector36.reportloto.databinding.Grafica6din49Binding
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
 class View6din49 : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: Grafica6din49Binding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,7 +28,7 @@ class View6din49 : Fragment() {
         val model6din49 =
             ViewModelProvider(this).get(Model6din49::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = Grafica6din49Binding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val webView: WebView = binding.webView6din49

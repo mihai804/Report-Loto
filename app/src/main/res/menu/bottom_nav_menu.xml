@@ -2,13 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/logo6din49"
+        android:id="@+id/navigare_6din49"
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/logojoker"
+        android:id="@+id/navigare_joker"
         android:title="@string/title_dashboard" />
 
 </menu>
