@@ -12,6 +12,7 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
+
 class View6din49 : Fragment() {
 
     private var _binding: Grafica6din49Binding? = null
