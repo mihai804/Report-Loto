@@ -9,7 +9,9 @@
         android:id="@+id/navigare_6din49"
         android:name="com.mcvector36.reportloto.ui.pachet6din49.View6din49"
         android:label="@string/title_home"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/activity_main" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigare_joker"
