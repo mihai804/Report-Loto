@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
 
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
