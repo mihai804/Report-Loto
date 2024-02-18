@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 2,
-      "versionName": "2.2",
-      "outputFile": "Report-Loto-v2.2.apk"
+      "versionCode": 3,
+      "versionName": "3.2",
+      "outputFile": "Report-Loto-v3.2.apk"
     }
   ],
   "elementType": "File"
