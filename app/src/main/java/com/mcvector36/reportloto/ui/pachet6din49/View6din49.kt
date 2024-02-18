@@ -41,8 +41,10 @@ class View6din49 : Fragment() {
         model6din49.uri.observe(viewLifecycleOwner) {
             webView.loadUrl(it.toString())
         }
+
         return root
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
