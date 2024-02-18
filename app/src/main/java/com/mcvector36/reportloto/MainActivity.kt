@@ -40,12 +40,16 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        mAdView = findViewById(R.id.adView) // reclama
-        val adRequest = AdRequest.Builder().build() // reclama
-        mAdView.loadAd(adRequest) //reclama
+        incarcaReclama()
 
         onBackPressedDispatcher.addCallback(this) { finish()}
 
+    }
+
+    fun incarcaReclama(){
+        mAdView = findViewById(R.id.adView) // reclama
+        val adRequest = AdRequest.Builder().build() // reclama
+        mAdView.loadAd(adRequest) //reclama
     }
 
 }
