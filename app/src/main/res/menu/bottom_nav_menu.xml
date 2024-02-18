@@ -6,14 +6,12 @@
     <item
         android:id="@+id/navigare_6din49"
         android:title="@string/title_home"
-        app:itemTextAppearance="@style/Theme.Personal1"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu" />
 
     <item
         android:id="@+id/navigare_joker"
         android:title="@string/title_dashboard"
-        app:itemTextAppearance="@style/Theme.Personal1"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu" />
 
 
 </menu>

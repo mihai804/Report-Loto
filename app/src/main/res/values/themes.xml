@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">#3BA21E</item>
         <item name="colorPrimaryVariant">#104F11</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#3BA21E</item>
         <item name="colorSecondaryVariant">#104F11</item>
@@ -12,8 +12,17 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="21">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:textSize">20sp</item> <!-- Setează dimensiunea textului la 20sp -->
-        <item name="android:layout_gravity">center</item> <!-- Centrează textul vertical și orizontal -->
+         -->
+    </style>
+
+    <style name="Theme.TextActiv" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textSize">24sp</item> <!-- Setează dimensiunea textului la 20sp -->
+        <item name="android:fontFamily">serif</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
 
 </resources>

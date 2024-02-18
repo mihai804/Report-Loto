@@ -9,14 +9,16 @@
         android:id="@+id/navigare_6din49"
         android:name="com.mcvector36.reportloto.ui.pachet6din49.View6din49"
         android:label="@string/title_home"
-        tools:layout="@layout/grafica_6din49" >
+        tools:layout="@layout/grafica_6din49"
+        app:itemTextAppearanceActive="@style/Theme.TextActiv" />
 
-    </fragment>
+
 
     <fragment
         android:id="@+id/navigare_joker"
         android:name="com.mcvector36.reportloto.ui.pachetjoker.ViewJoker"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/grafica_6din49" />
+        tools:layout="@layout/grafica_6din49"
+        app:itemTextAppearanceActive="@style/Theme.TextActiv"/>
 
 </navigation>
