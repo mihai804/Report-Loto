@@ -17,20 +17,12 @@ import com.mcvector36.reportloto.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    lateinit var mAdView : AdView
+    private lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        MobileAds.initialize(this) {}
-
-        mAdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
-
-
-
+        MobileAds.initialize(this) {} //reclama
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,7 +40,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
+        mAdView = findViewById(R.id.adView) // reclama
+        val adRequest = AdRequest.Builder().build() // reclama
+        mAdView.loadAd(adRequest) //reclama
 
         onBackPressedDispatcher.addCallback(this) { finish()}
 
