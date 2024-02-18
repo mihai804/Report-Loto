@@ -41,6 +41,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+        ads:adUnitId="ca-app-pub-1645817822233777/8997801812"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
