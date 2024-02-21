@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 class Model6din49 : ViewModel() {
 
     private val _uri = MutableLiveData<Uri>().apply {
-       value = Uri.parse("https://www.loto.ro/?p=3872")
+       value = Uri.parse("https://www.loto.ro/loto-new/newLotoSiteNexioFinalVersion/web/app2.php/jocuri/649_si_noroc/rezultate_extragere.html")
     }
     val uri: LiveData<Uri> = _uri
 }
