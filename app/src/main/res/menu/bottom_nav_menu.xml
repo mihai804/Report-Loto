@@ -13,5 +13,9 @@
         android:title="@string/title_dashboard"
         app:menu="@menu/bottom_nav_menu" />
 
+    <item
+        android:id="@+id/navigare_5din40"
+        android:title="@string/navigare_5din40"
+        app:menu="@menu/bottom_nav_menu" />
 
 </menu>

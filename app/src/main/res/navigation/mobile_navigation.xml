@@ -21,4 +21,11 @@
         tools:layout="@layout/grafica_6din49"
         app:itemTextAppearanceActive="@style/Theme.TextActiv"/>
 
+    <fragment
+        android:id="@+id/navigare_5din40"
+        android:name="com.mcvector36.reportloto.ui.pachet5din40.View5din40"
+        android:label="5 / 40"
+        app:itemTextAppearanceActive="@style/Theme.TextActiv"
+        tools:layout="@layout/grafica_5din40" />
+
 </navigation>
