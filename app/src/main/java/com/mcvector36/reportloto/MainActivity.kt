@@ -8,7 +8,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.gms.ads.MobileAds
 import com.mcvector36.reportloto.databinding.ActivityMainBinding
 
 
@@ -18,8 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        MobileAds.initialize(this) {} //reclama
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
