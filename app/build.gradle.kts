@@ -12,7 +12,7 @@ android {
         minSdk = 21
         targetSdk = 34
         versionCode = 3
-        versionName = "3.4"
+        versionName = "3.4.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         applicationIdSuffix = "reportloto"
@@ -81,5 +81,4 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("com.google.android.material:material:1.11.0")
 
-    implementation("com.google.android.gms:play-services-ads:22.6.0")
 }
